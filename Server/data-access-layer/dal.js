@@ -1,26 +1,29 @@
-const mongoose = require("mongoose");
+const mysql = require("mysql");
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "john",
+    password: "q1w2e3",
+    database: "PortfolioProject"
+});
+connection.connect(err => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log("We're connected to webService on MySQL.");
+});
 
-function connectAsync() {
+function executeAsync(sql, values) {
     return new Promise((resolve, reject) => {
-        mongoose.connect("mongodb://localhost:27017/webStore",
-            { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
-                if (err) {
-                    reject(err);
-                    return;
-                }
-                resolve(db);
-            });
+        connection.query(sql, values, (err, result) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(result);
+        });
     });
 }
-
-async function connectToDatabase() {
-    try {
-        const db = await connectAsync();
-        console.log("We're connected to " + db.name + " database on MongoDB");
-    }
-    catch (err) {
-        console.error(err);
-    }
-}
-
-connectToDatabase();
+module.exports = {
+    executeAsync
+};

@@ -7,9 +7,7 @@ const fileUpload = require('express-fileupload');
 const cors = require("cors");
 // controllers
 const authController = require("./controllers/auth-controller");
-const productController = require("./controllers/product-controller");
-const adminController = require("./controllers/admin-controller");
-const cartController = require("./controllers/cart-controller");
+const itemController = require("./controllers/item-controller");
 
 
 const server = express();
@@ -19,9 +17,7 @@ server.use(fileUpload());
 server.use(express.json());
 
 server.use('/api/auth', authController);
-server.use('/api/products', productController);
-server.use('/api/super', adminController);
-server.use('/api/cart', cartController);
+server.use('/api/items', itemController);
 
 
 server.listen({port}, () => console.log(`Listening on http://localhost:${port}`));

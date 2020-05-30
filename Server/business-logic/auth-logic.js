@@ -1,31 +1,35 @@
-const User = require('../models/auth');
+const dal = require('../data-access-layer/dal')
 const cryptography = require('../helpers/cryptography');
 
-// Signup: 
-function addUser(user) {
+async function addUser(user) {
     user.password = cryptography.hash(user.password);
-    console.log(user)
-    return user.save();
+    const sql = 'INSERT INTO users VALUES(DEFAULT, ?, ?, ?, ?, ?, ?, ? ,0)'
+    await dal.executeAsync(sql, [user.userFirstName, user.userLastName, user.userName, user.password, user.city, user.streetAddress, user.id, user.isAdmin]);
+    delete user.password;
+    return user;
 }
 
-// function checkEmail(email) {
-//     return User.find({ email }).exec();
-// }
+async function lookUpUser(info) {
+    const sql = `SELECT userName FROM users WHERE userName = ?`
+    const user = await dal.executeAsync(sql, [info]);
+    return user;
+}
+function lookUpID(ID) {
+    const sql = `SELECT userName FROM users WHERE id = ?`
+    const user = dal.executeAsync(sql, [ID]);
+    return user;
+}
 
-// function checkId(id) {
-//     return User.find({ id }).exec();
-// }
-
-/// ------- Login -------- //
 function login(info) {
     info.password = cryptography.hash(info.password);
-    return User.find({ username_email: details.username_email, password: info.password });
+    const sql = `SELECT * FROM users WHERE userName = ? AND password = ?`
+    const user = dal.executeAsync(sql, [info.userName, info.password]);
+    return user;
 }
 
-
 module.exports = {
-    addUser
-    // checkEmail,
-    // checkId,
-    // login
+    addUser,
+    lookUpUser,
+    lookUpID,
+    login
 }
