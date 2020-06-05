@@ -18,7 +18,6 @@ import { LogoutComponent } from './components/pages/auth/logout/logout.component
 import { AdminComponent } from './components/pages/auth/admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaterialModule } from './material.module';
 
 
 
@@ -42,7 +41,6 @@ import { MaterialModule } from './material.module';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
   ],
   providers: [],
   bootstrap: [MasterComponent]
