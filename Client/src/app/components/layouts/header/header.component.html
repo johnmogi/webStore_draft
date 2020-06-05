@@ -1,12 +1,39 @@
-<mat-toolbar color="primary">
-      <span>Third Line</span>
+<mat-toolbar color="secondary">
+  <a routerLink="/">
+    <span>Web Services Shop</span>
+  </a>
+  
+  <nav aria-label="Top Toolbar" class="docs-navbar-header">
+    
+ 
+    <a
+    routerLink="/"
+    routerLinkActive="active"
+    class="mat-focus-indicator docs-button mat-button mat-button-base"
+    >Home</a>
+    <a *ngIf='!user'
+    routerLink="register"
+    routerLinkActive="active"
+    class="mat-focus-indicator docs-button mat-button mat-button-base"
+    >Sign Up</a>
+    <a *ngIf='user'
+    routerLink="dashboard"
+    routerLinkActive="active"
+    class="mat-focus-indicator docs-button mat-button mat-button-base"
+    >Dashboard</a>
+    <a
+    *ngIf='user'
+    routerLink="shop"
+    routerLinkActive="active"
+    class="mat-focus-indicator docs-button mat-button mat-button-base"
+    >Shop</a>
 
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+  </nav>
+  
+  <span class="example-spacer"></span>
+  
+  <button mat-raised-button ><mat-icon>menu</mat-icon></button>
 
-      
-      <span class="example-spacer"></span>
 
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
-  </mat-toolbar>
+</mat-toolbar>
+

@@ -1,9 +1,31 @@
 <app-header></app-header>
-<hr />
-<app-sidebar1></app-sidebar1>
-<main>
-  <router-outlet></router-outlet>
-</main>
-<app-sidebar2></app-sidebar2>
-<hr />
+<mat-divider></mat-divider>
+
+<div class="flex-row-container">
+    <div class="flex-row-item"><app-sidebar1></app-sidebar1></div>
+    <div class="flex-row-item main"><router-outlet></router-outlet>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+          Toggle extra text
+        </button>
+      </mat-drawer>
+    </div>
+    <div class="flex-row-item"><app-sidebar2></app-sidebar2></div>
+</div>
+
+<mat-drawer-container class="example-container" autosize>
+
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container>
+
+  <mat-divider></mat-divider>
+
 <app-footer></app-footer>

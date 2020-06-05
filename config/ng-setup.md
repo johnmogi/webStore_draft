@@ -48,10 +48,10 @@ del app files
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link"routerLink="/" routerLinkActive="active">Home</a>
+              <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"routerLink="/games" routerLinkActive="active">Games</a>
+                <a class="nav-link" routerLink="/games" routerLinkActive="active">Games</a>
             </li>
 
           </ul>

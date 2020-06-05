@@ -1,1 +1,32 @@
-<p>sidebar1 works!</p>
+<div id="wellcome-mat" *ngIf='!user'>
+<mat-label>First time? sign up :</mat-label>
+<br/>
+<a routerLink="/register"><button mat-raised-button  type="button" class="btn btn-accent">Register a new account</button>
+</a>
+</div>
+<mat-divider></mat-divider>
+
+<form #myLoginForm='ngForm' class="form-inline" *ngIf='!user'>
+    <mat-form-field class="example-full-width">
+        <mat-label>Fill your Email - will be used as your username</mat-label>
+        <input matInput class="form-control" type="email" name='userName' placeholder="enter your username/ email" required minlength='4' #userNameInput='ngModel'
+        [(ngModel)]='loginForm.userName' > 
+        <!-- <mat-error *ngIf="emailInput.errors?.email && emailInput.touched">Enter valid email !</mat-error>  -->
+    </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter your password</mat-label>
+
+        <input matInput class="form-control" type="password" name='password' placeholder="Password" required minlength='4'
+            #passwordInput='ngModel' [(ngModel)]='loginForm.password'>
+    
+    </mat-form-field>
+    <br/>
+
+    <button mat-raised-button type="button" class="btn btn-light" (click)='login()' *ngIf='!user'><mat-icon>account_circle</mat-icon>Login</button>
+    <!-- [disabled]="myLoginForm.form.invalid"  -->
+
+
+</form>
+<button mat-raised-button type="button" class="btn btn-danger" (click)='logout()' *ngIf='user'><mat-icon>account_circle</mat-icon>Logout</button>
+

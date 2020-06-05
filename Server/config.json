@@ -1,6 +1,6 @@
 {
   "production": false,
-  "port": 3000,
+  "port": 3006,
   "MongoDB": {
     "MONGO_URI": "process.env.MONGO_URI",
     "mongodb": "//localhost/webStore",

@@ -205,6 +205,7 @@ serer side
 
 8) [Client] :
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+import {MatIconModule} from '@angular/material/icon';
    ng new Client --routing -css
    import { HttpClientModule } from "@angular/common/http";
    import { FormsModule } from "@angular/forms";
