@@ -7,11 +7,14 @@ const port = 3000
   providedIn: 'root'
 })
 export class AuthService {
-  public api = `http://localhost:${port}/api/auth/login`;
+  public api = `http://localhost:${port}/api/auth/`;
 
   constructor(private http: HttpClient) { }
 
   public login(info: object): Observable<any> {
+    return this.http.post<any>(this.api + 'login', info)
+  }
+  public register(info: object): Observable<any> {
     return this.http.post<any>(this.api, info)
   }
 

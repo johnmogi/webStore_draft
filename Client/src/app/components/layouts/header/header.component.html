@@ -1,42 +1,31 @@
-  <!-- <a routerLink="/">
-    <span>Web Services Shop</span>
-  </a>
-  <nav aria-label="Top Toolbar" class="docs-navbar-header">
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a *ngIf='!user' routerLink="register" routerLinkActive="active">Sign Up</a>
-    <a *ngIf='user' routerLink="dashboard" routerLinkActive="active">Dashboard</a>
-    <a *ngIf='user' routerLink="shop" routerLinkActive="active">Shop</a>
-  </nav>
-  <span class="example-spacer"></span>
-  <button mat-raised-button>menu</button> -->
-  <nav class="navbar bd-navbar navbar has-shadow is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" routerLink="/"> Web Services Shop </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+<nav class="navbar bd-navbar navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="/"> Web Services Shop </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a routerLink="/" routerLinkActive="active" class="navbar-item"> Home </a>
+      <a *ngIf='!user' routerLink="register" routerLinkActive="active" class="navbar-item">Sign Up</a>
+      <a *ngIf='user' routerLink="dashboard" routerLinkActive="active" class="navbar-item">Dashboard</a>
+      <a *ngIf='user' routerLink="shop" routerLinkActive="active" class="navbar-item">Shop</a>
+      <hr class="navbar-divider">
+      <a class="navbar-item"> Report an issue </a>
     </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a routerLink="/" routerLinkActive="active" class="navbar-item"> Home </a>
-        <a *ngIf='!user' routerLink="register" routerLinkActive="active" class="navbar-item">Sign Up</a>
-        <a *ngIf='user' routerLink="dashboard" routerLinkActive="active" class="navbar-item">Dashboard</a>
-        <a *ngIf='user' routerLink="shop" routerLinkActive="active" class="navbar-item">Shop</a>
-        <hr class="navbar-divider">
-        <a class="navbar-item"> Report an issue </a>
+  </div>
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <a class="button is-primary">
+          <strong>Sign up</strong>
+        </a>
+        <a class="button is-light"> Log in </a>
       </div>
     </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light"> Log in </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  </div>
+</nav>

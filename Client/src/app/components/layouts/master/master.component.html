@@ -1,19 +1,13 @@
 <app-header></app-header>
 <div class="columns">
-  <div class="column">
-    <app-sidebar1></app-sidebar1>
-  </div>
-  <div class="column is-two-thirds">
-    <section class="hero is-medium is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <router-outlet></router-outlet>
-        </div>
+  <app-sidebar1 class="container card column"></app-sidebar1>
+  <section class="hero is-medium is-primary is-bold column is-two-thirds">
+    <div class="hero-body">
+      <div class="container">
+        <router-outlet></router-outlet>
       </div>
-    </section>
-  </div>
-  <div class="column">
-    <app-sidebar2></app-sidebar2>
-  </div>
+    </div>
+  </section>
+  <app-sidebar2 class="column box"></app-sidebar2>
 </div>
 <app-footer></app-footer>
