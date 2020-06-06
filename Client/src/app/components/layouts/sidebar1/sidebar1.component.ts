@@ -15,7 +15,7 @@ export class Sidebar1Component implements OnInit {
   public user: AuthModel;
   public loginForm = { userName: '', password: '' };
 
-  constructor(private loginService: AuthService, private myRouter: Router) {}
+  constructor(private loginService: AuthService, private myRouter: Router) { }
 
   ngOnInit(): void {
     store.subscribe(() => {

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { MasterComponent } from './components/layouts/master/master.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
@@ -41,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [MasterComponent]

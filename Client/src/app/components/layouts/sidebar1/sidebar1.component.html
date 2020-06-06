@@ -1,5 +1,5 @@
-<div id="wellcome-mat" *ngIf='!user'> First time? sign up : <br />
-  <a routerLink="/register"><button mat-raised-button type="button" class="btn btn-accent">Register a new
+<div id="wellcome-mat" *ngIf='!user'>
+  <a routerLink="/register"><button mat-raised-button type="button" class="button is-rounded">Register a new
       account</button>
   </a>
 </div>
@@ -21,10 +21,9 @@
   </div>
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link" type="button" class="btn btn-light" (click)='login()' *ngIf='!user'>Login</button>
-      <button class="button is-link" type="button" class="btn btn-danger" (click)='logout()'
-        *ngIf='user'>Logout</button>
+      <button class="button is-link" type="button" (click)='login()' *ngIf='!user'>Login</button>
     </div>
   </div>
   <!-- [disabled]="myLoginForm.form.invalid"  -->
 </form>
+<button class="button is-link" type="button" (click)='logout()' *ngIf='user'>Logout</button>
